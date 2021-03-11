@@ -43,9 +43,9 @@ $$ -a_{n1}x_1 - a_{n2}x_2 - \cdots + (1-a_{nn})x_n = d_n$$
 $$
   \begin{bmatrix}
   (1-{a_11}) & -a_{12} & \cdots & -a_{1n} \\
-  -{a_21} & (1-a_{22}) & \cdots & -a_{2n} \\
+  -a_{21} & (1-a_{22}) & \cdots & -a_{2n} \\
   \vdots & \vdots & \ddots & \vdots \\
-  -{a_n1} & a_{n2} & \cdots & (1-a_{nn}) \\
+  -a_{n1} & a_{n2} & \cdots & (1-a_{nn}) \\
   \end{bmatrix}
 
   \begin{bmatrix}
