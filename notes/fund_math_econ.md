@@ -7,6 +7,7 @@ title: Fundamental Methods of Mathematical Economics
   - [5.7: Leontief Input-Output Models](#57-leontief-input-output-models)
 - [Chapter 7: Rules of Differentiation and Their Use in Comparative Statics](#chapter-7)
   - [7.5: Applications to Comparative-Static Analysis](#75-applications-to-comparative-static-analysis)
+  - [7.6: Note on Jacobian Determinants](#76-note-on-jacobian-determinants)
 
 # **Chapter 5**
 ## 5.7: Leontief Input-Output Models
@@ -92,3 +93,62 @@ $$x^* = (I - A)^{-1}d$$
 
 # **Chapter 7**
 ## 7.5: Applications to Comparative-Static Analysis
+### 7.5.1
+- Comparative-static analysis concerns how the equilibrium value of an endogenous variable will change when the exogenous variables change
+- For example, in a one-commodity market model:
+
+$$
+Q_D = a - bP \quad (a, b > 0) \\
+Q_S = -c + dP \quad (c, d > 0) \\
+$$
+
+$$
+P^* = \frac{a + c}{b + d} \\
+Q^* = \frac{ad - bc}{b + d}
+$$
+
+- We can use partial derivatives to better understand how changing the parameters affect $P^\*$ and $Q^\*$, which is useful for higher dimensional cases where graphical representation is impossible
+
+$$
+\frac{\partial P^*}{\partial a} = \frac{\partial P^*}{\partial c} = \frac{1}{b + d} > 0 \\
+\frac{\partial P^*}{\partial b} = \frac{\partial P^*}{\partial d} = \frac{-(a + c)}{(b + d)^2} < 0
+$$
+
+- The same applies to a national-income model:
+
+$$
+Y = C + I_0 + G_0 \\
+C = \alpha + \beta(Y - T) \quad (\alpha > 0; \quad 0 < \beta < 1) \\
+T = \gamma + \delta Y \quad (\gamma > 0; \quad 0 < \delta < 1) \\
+$$
+
+$$
+Y^* = \frac{\alpha - \beta \gamma + I_0 + G_0}{1 - \beta + \beta \delta}
+$$
+
+- We can obtain the **government-expenditure multiplier**, the **nonincome-tax multiplier**, and the extent to which increasing the income tax rate $\delta$ will lower the equilibrium income $Y^*$
+
+$$
+\frac{\partial Y^*}{\partial G_0} = \frac{1}{1 - \beta + \beta \delta} > 0 \\
+\frac{\partial Y^*}{\partial \gamma} = \frac{-\beta}{1 - \beta + \beta \delta} < 0 \\
+\frac{\partial Y^*}{\partial \delta} = \frac{-\beta Y^*}{1 - \beta + \beta \delta} < 0 \\
+$$
+
+### 7.5.2
+- Returning to the open Leontief input-output model, the inverse of the Leontief matrix actually represents the comparative-static derivatives of our output values to the final demand
+
+$$
+\frac{\partial x^*}{\partial d} = (I - A)^{-1}
+$$
+
+- This is useful in revising output goals in response to changes in planning targets
+
+## 7.6: Note on Jacobian Determinants
+- Partial derivatives can be used to test whether there is dependence between a set of functions
+- The Jacobian matrix is defined as:
+
+$$
+|J| \equiv \left| \frac{\partial (y_1, y_2, \cdots, y_n)}{\partial (x_1, x_2, \cdots, x_n)}\right|
+$$
+
+- $\|J\| = 0$ for all values of $x_1, x_2, \cdots, x_n$ if and only if the functions are functionally (linearly or nonlinearly) dependent
