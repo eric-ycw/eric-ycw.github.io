@@ -82,7 +82,7 @@ $$x^* = (I - A)^{-1}d$$
   2. All elements in the demand vector $d$ are non-negative
   3. All the **leading principal minors** of $I - A$ are positive
 
-- The leading principal minors of a $n\times n$ matrix $M$ are the minors with dimension $m\times m$ with $m \le n$ that include the **top-left corner** of $M$
+- The leading principal minors of a $n\times n$ matrix $M$ are the minors with dimension $m\times m$ ($m \le n$) that include the **top-left corner** of $M$
 - The Hawkins-Simon condition specifies practicability and viability restrictions for production
 
 ### 5.7.4
