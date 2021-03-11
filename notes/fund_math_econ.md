@@ -145,7 +145,7 @@ $$
 
 ## 7.6: Note on Jacobian Determinants
 - Partial derivatives can be used to test whether there is dependence between a set of functions
-- The Jacobian matrix is defined as:
+- The Jacobian determinant is defined as:
 
 $$
 |J| \equiv \left| \frac{\partial (y_1, y_2, \cdots, y_n)}{\partial (x_1, x_2, \cdots, x_n)}\right|
