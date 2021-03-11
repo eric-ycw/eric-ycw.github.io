@@ -68,4 +68,4 @@ $$P(class|X_1, X_2, \cdots, X_n) = P(class)P(X_1|class)P(X_2|class)\cdots P(X_n|
 - It is more convenient to maximize the natural logarithm of the likelihood function (we can do this because the logarithm is monotonic)
 - Hence, we can solve for the MLE by setting:
 
-$$\frac{\partial ln(L_n)}{\partial \theta_1} = 0, \frac{\partial ln(L_n)}{\partial \theta_2} = 0, \cdots, \frac{\partial ln(L_n)}{\partial \theta_k} = 0$$
+$$\frac{\partial (\log L_n)}{\partial \theta_1} = 0, \frac{\partial (\log L_n)}{\partial \theta_2} = 0, \cdots, \frac{\partial (\log L_n)}{\partial \theta_k} = 0$$
