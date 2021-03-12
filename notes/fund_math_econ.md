@@ -6,8 +6,13 @@ title: Fundamental Methods of Mathematical Economics
 - [Chapter 5: Linear Models and Matrix Algebra (Continued)](#chapter-5)
   - [5.7: Leontief Input-Output Models](#57-leontief-input-output-models)
 - [Chapter 7: Rules of Differentiation and Their Use in Comparative Statics](#chapter-7)
+  - [7.4: Partial Differentiation](#74-partial-differentiation)
   - [7.5: Applications to Comparative-Static Analysis](#75-applications-to-comparative-static-analysis)
   - [7.6: Note on Jacobian Determinants](#76-note-on-jacobian-determinants)
+- [Chapter 8: Comparative-Static Analysis of General-Function Models](#chapter-8)
+  - [8.2: Total Differentials](#82-total-differentials)
+  - [8.4: Total Derivatives](#84-total-derivatives)
+  - [8.5: Derivatives of Implicit Functions](#85-derivatives-of-implicit-functions)
 
 # **Chapter 5**
 ## 5.7: Leontief Input-Output Models
@@ -92,6 +97,20 @@ $$x^* = (I - A)^{-1}d$$
 - The Leontief matrix in this case must be singular, and there will be infinitely many solutions with $x_1^*, \cdots, x_j^\*$ in proportion to one another
 
 # **Chapter 7**
+## 7.4: Partial Differentiation
+- Partial differentiation is simply differentiating a function with respect to a single variable while holding all other independent variables constant
+- The **gradient** $\nabla f(x_1, x_2, \cdots, x_n)$ is a vector with all the partial derivatives of a function as its components
+
+$$
+\nabla f(x_1, x_2, \cdots, x_n) =
+\begin{bmatrix}
+\frac{\partial f}{\partial x_1}(x_1, x_2, \cdots, x_n) \\
+\frac{\partial f}{\partial x_2}(x_1, x_2, \cdots, x_n) \\
+\vdots \\
+\frac{\partial f}{\partial x_n}(x_1, x_2, \cdots, x_n) \\
+\end{bmatrix}
+$$
+
 ## 7.5: Applications to Comparative-Static Analysis
 ### 7.5.1
 - Comparative-static analysis concerns how the equilibrium value of an endogenous variable will change when the exogenous variables change
@@ -149,6 +168,36 @@ $$
 
 $$
 |J| \equiv \left| \frac{\partial (y_1, y_2, \cdots, y_n)}{\partial (x_1, x_2, \cdots, x_n)}\right|
+\equiv
+
+\begin{vmatrix}
+\frac{\partial y_1}{\partial x_1} & \cdots & \frac{\partial y_1}{\partial x_n} \\
+\vdots & & \vdots \\
+\frac{\partial y_n}{\partial x_1} & \cdots & \frac{\partial y_n}{\partial x_n}
+\end{vmatrix}
+
 $$
 
-- $\|J\| = 0$ for all values of $x_1, x_2, \cdots, x_n$ if and only if the functions are functionally (linearly or nonlinearly) dependent
+- $\|J\| = 0$ for all values of $x_1, x_2, \cdots, x_n$ if and only if the functions are **functionally (linearly or nonlinearly) dependent**
+- The determinant test for systems of linear equations can be interpreted as a special application of the Jacobian test
+
+# **Chapter 8**
+## 8.2: Total Differentials
+- Total differentials give the total change in a function with respect to all of its arguments
+- For example, consider a production function $Q = Q(K, L, t)$
+- The total differential is:
+
+$$
+dQ = \frac{\partial Q}{\partial K}dK + \frac{\partial Q}{\partial L}dL + \frac{\partial Q}{\partial t}dt
+$$
+
+## 8.4: Total Derivatives
+- Hence, it is clear that we can find the total derivative with respect to a specific variable just by dividing by its differential, given that the other variables are functionally dependent on the specific variable (i.e. $K = K(t)$ and $L = L(t)$ in this example)
+
+$$
+\frac{dQ}{dt} = \frac{\partial Q}{\partial K}\frac{dK}{dt} +
+\frac{\partial Q}{\partial L}\frac{dL}{dt} +
+\frac{\partial Q}{\partial t}
+$$
+
+## 8.5: Derivatives of Implicit Functions
