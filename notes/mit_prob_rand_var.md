@@ -43,19 +43,20 @@ $$\sum_{k=0}^{\lfloor n/2 \rfloor} \binom{n}{2k} \cdot \frac{(2k)!}{k! \cdot 2^k
 $$4$$
 
 ### Question C2
-Note that if we pick $k$ cards from one suit ($1 \leq k \leq 12$), we must pick $13 - k$ cards from the other, and we will have $\binom{13}{k} \cdot \binom{13}{13-k} = \binom{13}{k}^{2}$ combinations for every $k$, so the answer is:
+There are $\binom{4}{2}$ ways to choose two suits out of four. We then pick 13 cards out of 26, and subtract the two cases where all cards come from a single suit.
 
-$$\binom{4}{2} \cdot \sum_{k=1}^{12} \binom{13}{k}^{2}$$
+$$\binom{4}{2} \cdot \left( \binom{26}{13} - 2 \right)$$
 
 ### Question C3
-Let us define $N(m) = \sum_{i=1}^{m-1} \binom{m-1}{i}^{2}$ where $m \geq 2$. First we choose one suit out of four, then choose two suits out of the remaining three. We must pick $k$ cards ($1 \leq k \leq 11$) from the first suit and $13 - k$ cards from the other two, and we will have $\binom{13}{k} \cdot N(13 - k)$ combinations for every $k$. However, if we simply sum up the number of combinations for all $k$ and multiply them by $\binom{4}{1} \cdot \binom{3}{2}$, all combinations would be triple-counted, so we have to divide the coefficient by $3$ to get $\binom{4}{3}$. Therefore, the solution is:
+There are $\binom{4}{3}$ ways to choose three suits out of four. We then pick 13 cards out of 39, and subtract the $\binom{26}{13} \cdot \binom{3}{2}$ cases where all cards come from less than three suits.
 
-$$\binom{4}{3} \cdot \sum_{k=1}^{11} \binom{13}{k} \cdot N(13 - k)$$
+$$\binom{4}{3} \cdot \left( \binom{39}{13} - \binom{26}{13} \cdot \binom{3}{2} \right)$$
+
 
 ### Question C4
-Let us define $N(m) = \sum_{i=1}^{m-1} \binom{m-1}{i}^{2}$ where $m \geq 2$. We divide the four suits into two pairs of suits. We must pick $k$ cards ($2 \leq k \leq 11$) from the first pair and $13 - k$ cards from the other pair, so we will have $N(k) \cdot N(13-k)$ combinations for every $k$. However, if we simply sum up the number of combinations for all $k$ and multiply them by $\binom{4}{2}$ each combination is repeated exactly $\binom{4}{2}$ times. So we have:
+We pick 13 cards out of the whole deck, and subtract the $\binom{39}{13} \cdot \binom{4}{3}$ cases where all cards come from less than four suits.
 
-$$\sum_{k=2}^{11} N(k) \cdot N(13-k)$$
+$$\binom{52}{13} - \binom{39}{13} \cdot \binom{4}{3}$$
 
 ### Question D
 
