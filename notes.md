@@ -7,3 +7,4 @@ title: Notes
 
 **Online Courses**
 - [Bayesian Methods for Machine Learning - HSE]({{site.url}}/notes/bayes_ml/)
+- [Probability and Random Variables (18.600) - MIT]({{site.url}}/notes/mit_prob_rand_var/)
