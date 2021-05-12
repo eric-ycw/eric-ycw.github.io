@@ -104,3 +104,23 @@ $$
 
 \end{split}
 $$
+
+### Additional Notes
+
+The number of ways to partition k indistinguishable objects into n distinguishable groups is $$\binom{n+k-1}{k}$$. One way to think about this is to imagine $k$ "dots" and $n-1$ "bars" on a horizontal line, such that the bars divide the dots into $n$ groups. There would be $n+k-1$ locations to place a dot or bar, and we have to choose $k$ locations to put the dots (or $n-1$ locations to put the bars). This method comes in handy for a large family of problems (integer addition partitions, $k$ picks from $n$ objects with replacement).
+
+There are also some useful identities that warrant attention.
+
+$$
+n \binom{n-1}{k-1} = k \binom{n}{k}
+$$
+
+This can obviously be derived algebraically, but it can also be proven using an intuitive explanation. Suppose we choose $k$ team members out of $n$ students, and designate one of the team members as the captain. This is the same as choosing a captain from $n$ students, then picking the rest of the team ($k-1$ members) from the remaining $n-1$ students.
+
+Next, we have Vandermonde's identity.
+
+$$
+\binom{m+n}{k} = \sum_{i=0}^{k} \binom{m}{i} \binom{n}{k-i}
+$$
+
+Imagine two groups of indistinguishable objects of size $m$ and $n$. We have to pick $k$ objects from the two groups. We first pick $i$ objects ($0 \leq i \leq k$) from the group of size $m$, then pick the remaining $k-i$ objects from the group of size $n$. The total number of ways to do this is equal to the sum of $\binom{m}{i} \binom{n}{k-i}$ over all possible values of $i$.
