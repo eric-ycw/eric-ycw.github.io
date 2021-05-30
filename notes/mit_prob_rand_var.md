@@ -4,6 +4,7 @@ title: Probability and Random Variables (MIT 18.600)
 ---
 **Table of Contents**
 - [Problem Set 1](#problem-set-1)
+- [Problem Set 2](#problem-set-2)
 
 Link to questions [here](https://ocw.mit.edu/courses/mathematics/18-600-probability-and-random-variables-fall-2019/assignments/).
 
@@ -107,7 +108,7 @@ $$
 
 ### Additional Notes
 
-The number of ways to partition k indistinguishable objects into n distinguishable groups is $$\binom{n+k-1}{k}$$. One way to think about this is to imagine $k$ "dots" and $n-1$ "bars" on a horizontal line, such that the bars divide the dots into $n$ groups. There would be $n+k-1$ locations to place a dot or bar, and we have to choose $k$ locations to put the dots (or $n-1$ locations to put the bars). This method comes in handy for a large family of problems (integer addition partitions, $k$ picks from $n$ objects with replacement).
+The number of ways to partition k indistinguishable objects into n distinguishable groups is $$\binom{n+k-1}{k}$$. One way to think about this is to imagine $k$ "dots" and $n-1$ "bars" on a horizontal line, such that the bars divide the dots into $n$ groups. There would be $n+k-1$ locations to place a dot or bar, and we have to choose $k$ locations to put the dots (or $n-1$ locations to put the bars). This method comes in handy for a large family of problems (integer partitions, $k$ picks from $n$ objects with replacement).
 
 There are also some useful identities that warrant attention.
 
@@ -124,3 +125,43 @@ $$
 $$
 
 Imagine two groups of indistinguishable objects of size $m$ and $n$. We have to pick $k$ objects from the two groups. We first pick $i$ objects ($0 \leq i \leq k$) from the group of size $m$, then pick the remaining $k-i$ objects from the group of size $n$. The total number of ways to do this is equal to the sum of $\binom{m}{i} \binom{n}{k-i}$ over all possible values of $i$.
+
+# Problem Set 2
+### Question A1
+
+$$P(S_5) = \frac{4}{6^2} = \frac{1}{9}$$
+
+$$P(S_7) = \frac{6}{6^2} = \frac{1}{6}$$
+
+$$P(E) = P(S_5) + (1 - P(S_5) - P(S_7)) \cdot P(E) = \frac{2}{5}$$
+
+### Question A2
+
+Can be shown visually using a Venn diagram with three sets. Alternatively:
+
+$$
+\begin{split}
+P(E \cup F \cup G) & = P(E \cup F) + P(G) - P((E \cup F)G) \\
+
+& = P(E) + P(F) + P(G) - P(FG) - P(EG) - P(EF) + P(EFG) \\
+
+& = P(E) + P(F) + P(G) - P(E^cFG) - P(EF^cG) - P(EFG^c) - 3P(EFG) + P(EFG) \\
+
+& = P(E) + P(F) + P(G) - P(E^cFG) - P(EF^cG) - P(EFG^c) - 2P(EFG) \\
+
+\end{split}
+$$
+
+### Question A3
+
+If all points are equally likely with $$P(E_i) = p$$ for some $$p > 0$$, the sum of $$P(E_i)$$ over the whole set will be $$\sum^{\infty}_{i=1} P(E_i) = \infty$$, which is a contradiction since the sum should be $$1$$. Similarly, a contradiction is reached if $$p = 0$$.
+
+All points can have positive $$p$$, for example in the case of $$P(E_i) = \frac{1}{2^i}$$.
+
+### Question B1
+
+There exists arbitrage opportunities where the prices for opposing bets on predictit and betfair add up to less than 100. Examples include buying predictit NO and betfair YES for Yang ($$89 + 6.1 = 95.1$$), Buttigieg ($$92 + 5 = 97$$), and Sanders ($$84 + 13.5 = 97.5$$).
+
+### Question B2
+
+People betting on presidential nomination contracts are subject to many cognitive biases (overconfidence, information bias), which gives room to pricing errors and arbitrage opportunities.
