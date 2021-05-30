@@ -1,6 +1,7 @@
 ---
 layout: subpage
-title: Why Nations Fail
+title: Why Nations Fail: The Origins of Power, Prosperity and Poverty
+source: D. Acemoglu, J. Robinson
 ---
 **Table of Contents**
 - [Chapter 1: So Close And Yet So Different](#chapter-1)

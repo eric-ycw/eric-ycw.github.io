@@ -1,6 +1,7 @@
 ---
 layout: subpage
 title: Fundamental Methods of Mathematical Economics
+source: A. Chiang
 ---
 **Table of Contents**
 - [Chapter 5: Linear Models and Matrix Algebra (Continued)](#chapter-5)

@@ -1,6 +1,7 @@
 ---
 layout: subpage
 title: Bayesian Methods for Machine Learning
+source: HSE
 ---
 **Table of Contents**
 - [Week 1: Introduction to Bayesian Methods and Conjugate Priors](#week-1)

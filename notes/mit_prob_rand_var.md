@@ -1,6 +1,7 @@
 ---
 layout: subpage
-title: Probability and Random Variables (MIT 18.600)
+title: Probability and Random Variables
+source: MIT
 ---
 **Table of Contents**
 - [Problem Set 1](#problem-set-1)
