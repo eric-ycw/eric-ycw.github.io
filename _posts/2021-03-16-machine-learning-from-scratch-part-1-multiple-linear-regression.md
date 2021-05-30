@@ -23,7 +23,7 @@ tags: machine-learning machine-learning-from-scratch math cs
 
 - [Footnotes](#footnotes)
 
-# Introduction
+## Introduction
 
 This is a series of posts where I attempt to build machine learning algorithms in Python from scratch without the use of any external libraries (except NumPy). The goal is to have a solid understanding of the math/statistics and design principles that govern how these algorithms work.
 
@@ -31,8 +31,8 @@ Note that the actual implementation will primarily focus on readability and inst
 
 To start off with something relatively simple, we will first look at **linear regression**, as well as an introduction to **gradient descent** and **feature scaling**.
 
-# What is linear regression?
-## The simple case
+## What is linear regression?
+### The simple case
 <br>
 <p align="center">
 <img src="/assets/images/simple-linear-regression.png" alt="Simple linear regression" width="600">
@@ -56,7 +56,7 @@ There are many reasons behind squaring the residuals, one of them being that it 
 
 **N.B.** There is a closed-form solution for OLS by solving for $\beta$ algebraically. Technically, we don't need any machine learning at all to fit a linear regression model, but it serves as a good entry point to understand and implement machine learning principles.
 
-## Multiple linear regression
+### Multiple linear regression
 <br>
 <p align="center">
 <img src="/assets/images/multiple-linear-regression.png" alt="multiple linear regression" width="350">
@@ -78,7 +78,7 @@ Often, these assumptions do not hold when dealing with real data, and there are 
 
 You might think: "Okay, this is great, but how do we actually find the set of coefficients that minimizes error? And what does this have to do with machine learning?" In order to answer these two questions, we will need a bit of linear algebra and calculus to help us out.
 
-## Linear regression in matrix form
+### Linear regression in matrix form
 
 Rewriting the equation above in matrix form, we have:
 
@@ -141,8 +141,8 @@ The response vector $\mathbf Y$ can be obtained simply by multiplying the **desi
 
 We haven't done anything new or amazing here, but a matrix representation allows us to exploit the convenience and speed of NumPy's ndarrays in our implementation. With this is mind, we can move on to how we can optimize $\beta$, the vector of parameters.
 
-# What is gradient descent?
-## The hill analogy
+## What is gradient descent?
+### The hill analogy
 <br>
 <p align="center">
 <img src="/assets/images/gradient-descent.gif" alt="Gradient descent" width="300">
@@ -151,7 +151,7 @@ To gain an intuitive understanding of gradient descent, we can imagine a person 
 
 Since it's annoying to change directions all the time, the person should only readjust their walking direction once in a while. But if they do that too infrequently, they might overshoot and end up wandering. When they reach flat ground, it's probable that they've arrived at the bottom of the hill, but if the hill terrain is complex, they might end up somewhere else that isn't the lowest point of the entire mountain (e.g. a saddle or a hole).
 
-## Gradient vectors and loss functions
+### Gradient vectors and loss functions
 
 Let's rephrase that in a more mathematical way. We are trying to minimize a **loss function** $L(\beta)$ that measures how incorrect our model is. By computing the **gradient vector** $\nabla L(\beta)$, we'll know how to adjust $\beta$ locally to make $L(\beta)$ decrease the fastest.
 
@@ -213,8 +213,8 @@ $$
 
 We arrive at an elegant result: we can obtain $\nabla L(\beta)$ by multiplying the transpose of the design matrix with the error vector along with a coefficient of $\frac{-2}{m}$. Having understood the math, we can finally proceed to our implementation.
 
-# Implementation
-## Laying the groundwork
+## Implementation
+### Laying the groundwork
 
 In our *utils.py* file, we write out our loss function and gradient optimization algorithm. Since we're using ndarrays from NumPy, implementing matrix algebra is quite straightforward.
 
@@ -271,7 +271,7 @@ class LinearRegression:
         return y_hat, loss
 {% endhighlight %}
 
-## Data preprocessing
+### Data preprocessing
 
 To test our implementation on real data, we will build a linear regression model for Amazon stock prices using S&P 500 prices, as well as the stock prices of Amazon's main competitors (Walmart, Ebay, Apple). We will also compare our results and prediction error to that of scikit-learn.
 
@@ -334,7 +334,7 @@ X_train, y_train, X_test, y_test = X_train.values, y_train.values, X_test.values
 
 We've picked out all relevant data from the *csv* files for training and testing. However, we still have a few things left to do before we can plug them in into our training function.
 
-## Feature scaling
+### Feature scaling
 <br>
 <p align="center">
 <img src="/assets/images/gradient-descent-zigzag.png" alt="Zigzagging in gradient descent without feature scaling" width="400">
@@ -365,7 +365,7 @@ X_train = np.hstack((np.ones((X_train.shape[0], 1)), X_train))
 X_test = np.hstack((np.ones((X_test.shape[0], 1)), X_test))
 {% endhighlight %}
 
-## Results
+### Results
 
 {% highlight python %}
 lr = LinearRegression()
@@ -412,7 +412,7 @@ sklearn R-squared: 0.9428859468886387
 
 Our $R^2$ is nearly identical to that of scikit-learn's. For OLS linear regression, scikit-learn computes the closed-form solution directly and does not use gradient descent, which explains the slight difference.
 
-# Footnotes
+## Footnotes
 
 *The full code and data used in this article can be found in [this repository](https://github.com/eric-ycw/solomon).*
 
