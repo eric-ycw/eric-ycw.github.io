@@ -91,6 +91,7 @@ $$
 
 $$
 \begin{split}
+
 \int_{0}^{\infty} x^{n}e^{-x}dx & = -\int_{0}^{\infty} x^{n}de^{-x} \\
 
 & = n \int_{0}^{\infty} x^{n-1}e^{-x}dx - [x^n e^{-x}]_{0}^{\infty} \\
@@ -141,6 +142,7 @@ Can be shown visually using a Venn diagram with three sets. Alternatively:
 
 $$
 \begin{split}
+
 P(E \cup F \cup G) & = P(E \cup F) + P(G) - P((E \cup F)G) \\
 
 & = P(E) + P(F) + P(G) - P(FG) - P(EG) - P(EF) + P(EFG) \\
@@ -165,3 +167,28 @@ There exists arbitrage opportunities where the prices for opposing bets on predi
 ### Question B2
 
 People betting on presidential nomination contracts are subject to many cognitive biases (overconfidence, information bias), which gives room to pricing errors and arbitrage opportunities.
+
+### Additional Notes
+
+A classic and famous problem in probability is De Montmort's matching problem. Imagine we have sorted cards labelled $$1, 2, \cdots, n$$. We then shuffle the deck of cards. If there is at least one card that happens to be in its original position (e.g. the card labelled $$7$$ remains in the $$7th$$ position), we win the game. What is the probability of winning?
+
+For any card, the probability of it remaining in the same position after shuffling is $$P(W_1) = \frac{(n-1)!}{n!} = \frac{1}{n}$$. For any two cards, the probability of both of them remaining in the same positions after shuffling is $$P(W_2) = \frac{(n-2)!}{n!} = \frac{1}{n(n-1)}$$.
+
+
+Note that the probability of winning $$P(W)$$ is $$P(W_1 \cup W_2 \cup \cdots \cup W_n)$$. So by the inclusion-exclusion principle, we have:
+
+$$
+\begin{split}
+
+P(W) & = P(W_1 \cup W_2 \cup \cdots \cup W_n) = P(\bigcup_{i=1}^{n} W_i) \\
+
+& = \binom{n}{1} P(W_1) - \binom{n}{2} P(W_2) + \cdots + (-1)^{n+1} \binom{n}{n} P(W_n) \\
+
+& = n \cdot \frac{1}{n} - \frac{n(n-1)}{2!} \frac{1}{n(n-1)} + \cdots + (-1)^{n+1} (\frac{n!}{n!}) \frac{1}{n!} \\
+
+& = 1 - \frac{1}{2!} + \cdots + (-1)^{n+1} \frac{1}{n!} \\
+
+& \approx 1 - e^{-1}
+
+\end{split}
+$$
