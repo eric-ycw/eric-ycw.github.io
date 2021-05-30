@@ -14,7 +14,7 @@ title: Fundamental Methods of Mathematical Economics
   - [8.4: Total Derivatives](#84-total-derivatives)
   - [8.5: Derivatives of Implicit Functions](#85-derivatives-of-implicit-functions)
 
-# **Chapter 5**
+## **Chapter 5**
 ## 5.7: Leontief Input-Output Models
 ### 5.7.1
 - Leontief's input-output analysis answers the question: "What level of output should each industry in an economy produce to sufficiently satisfy total demand for that product?"
@@ -96,7 +96,7 @@ $$x^* = (I - A)^{-1}d$$
 - Hence, all the final demands will be zero, and the system of equations becomes homogeneous
 - The Leontief matrix in this case must be singular, and there will be infinitely many solutions with $x_1^*, \cdots, x_j^\*$ in proportion to one another
 
-# **Chapter 7**
+## **Chapter 7**
 ## 7.4: Partial Differentiation
 - Partial differentiation is simply differentiating a function with respect to a single variable while holding all other independent variables constant
 - The **gradient** $\nabla f(x_1, x_2, \cdots, x_n)$ is a vector with all the partial derivatives of a function as its components
@@ -181,7 +181,7 @@ $$
 - $\|J\| = 0$ for all values of $x_1, x_2, \cdots, x_n$ if and only if the functions are **functionally (linearly or nonlinearly) dependent**
 - The determinant test for systems of linear equations can be interpreted as a special application of the Jacobian test
 
-# **Chapter 8**
+## **Chapter 8**
 ## 8.2: Total Differentials
 - Total differentials give the total change in a function with respect to all of its arguments
 - For example, consider a production function $Q = Q(K, L, t)$

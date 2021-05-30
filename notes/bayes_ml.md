@@ -5,8 +5,9 @@ title: Bayesian Methods for Machine Learning
 **Table of Contents**
 - [Week 1: Introduction to Bayesian Methods and Conjugate Priors](#week-1)
   - [1.1: Introduction to Bayesian Methods](#11-introduction-to-bayesian-methods)
+  - [1.2: Conjugate Priors](#12-conjugate-priors)
 
-# **Week 1**
+## **Week 1**
 ## 1.1: Introduction to Bayesian Methods
 ### 1.1.1
 - A frequentist approach sees probabilities as **long-run frequencies** where parameters are constant, while a Bayesian approach sees probabilities as **degrees of belief** where parameters are variables
@@ -69,3 +70,15 @@ $$P(class|X_1, X_2, \cdots, X_n) = P(class)P(X_1|class)P(X_2|class)\cdots P(X_n|
 - Hence, we can solve for the MLE by setting:
 
 $$\frac{\partial (\log L_n)}{\partial \theta_1} = 0, \frac{\partial (\log L_n)}{\partial \theta_2} = 0, \cdots, \frac{\partial (\log L_n)}{\partial \theta_k} = 0$$
+
+## 1.2: Conjugate Priors
+### 1.2.1
+- Modelling the distribution of evidence $P(X)$ may be very hard in some cases
+  - For a neural network trained to play games where X is an image of the game screen, P(X) is easy to model for games like "Snake", while almost impossible for more complex games
+- We can find the maximum a posteriori (MAP) $\theta_{MP}$ (i.e. the mode of the posterior distribution) by optimization, which would allow us to eliminate $P(X)$ as it does not depend on $\theta$
+
+$$
+\theta_{MP} = \underset{\theta}{\mathrm{argmax}}\, P(X|\theta)P(\theta)
+$$
+- However, there are problems with MAP, including not being invariant to reparameterization (e.g. applying a sigmoid function on a Gaussian distribution)
+- Another problem is that we cannot compute confidence intervals for a MAP estimation

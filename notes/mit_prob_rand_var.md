@@ -10,7 +10,7 @@ Link to questions [here](https://ocw.mit.edu/courses/mathematics/18-600-probabil
 
 **DISCLAIMER:** All 'answers' are attempts and could be incorrect.
 
-# Problem Set 1
+## Problem Set 1
 ### Question A1
 (a) $$8!$$
 
@@ -127,7 +127,7 @@ $$
 
 Imagine two groups of indistinguishable objects of size $m$ and $n$. We have to pick $k$ objects from the two groups. We first pick $i$ objects ($0 \leq i \leq k$) from the group of size $m$, then pick the remaining $k-i$ objects from the group of size $n$. The total number of ways to do this is equal to the sum of $\binom{m}{i} \binom{n}{k-i}$ over all possible values of $i$.
 
-# Problem Set 2
+## Problem Set 2
 ### Question A1
 
 $$P(S_5) = \frac{4}{6^2} = \frac{1}{9}$$
