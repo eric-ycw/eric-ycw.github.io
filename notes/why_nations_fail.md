@@ -1,6 +1,6 @@
 ---
 layout: subpage
-title: Why Nations Fail: The Origins of Power, Prosperity and Poverty
+title: "Why Nations Fail: The Origins of Power, Prosperity and Poverty"
 source: D. Acemoglu, J. Robinson
 ---
 **Table of Contents**
