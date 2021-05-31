@@ -24,11 +24,12 @@
         {% endif %}
       {% endif %}
     {% endfor %}
-
-    <span class="sidebar-nav-item">Currently v{{ site.version }}</span>
   </nav>
 
   <div class="sidebar-item">
+    <p>
+      { <a href="{{site.github}}">Github</a> / <a href="{{site.linkedin}}">LinkedIn</a> }
+    </p>
     <p>
       &copy; {{ site.time | date: '%Y' }}. All rights reserved.
     </p>
