@@ -4,7 +4,7 @@ title: Home
 ---
 
 <div class="posts">
-  <h1>Posts</h1>
+  <h2>Posts</h2>
 
   {% for post in site.posts limit:5 %}
   <div class="post">
@@ -13,13 +13,20 @@ title: Home
         {{ post.title }}
       </a>
     </h3>
-    <span class="post-date">{{ post.date | date_to_string }}</span>
+    <span class="post-date">
+      {{ post.date | date_to_string }}
+      {% if post.tags.size > 0 %}
+      &nbsp &nbsp &nbsp {
+        <i>{{ post.tags | sort | join: " / " }}</i>
+      }
+      {% endif %}
+    </span>
   </div>
   {% endfor %}
 </div>
 
 <div class="notes">
-  <h1>Notes</h1>
+  <h2>Notes</h2>
 
   {% for page in site.pages %}
     {% if page.path contains 'notes/' %}
@@ -29,7 +36,14 @@ title: Home
           {{ page.title }}
         </a>
       </h3>
-      <span class="post-date">{{ page.source }}</span>
+      <span class="post-date">
+        {{ page.source }}
+        {% if page.tags.size > 0 %}
+        &nbsp &nbsp &nbsp {
+          <i>{{ page.tags | sort | join: " / " }}</i>
+        }
+        {% endif %}
+      </span>
     </div>
     {% endif %}
   {% endfor %}

@@ -2,6 +2,7 @@
 layout: subpage
 title: Probability and Random Variables
 source: MIT
+tags: [math]
 ---
 **Table of Contents**
 - [Problem Set 1](#problem-set-1)
