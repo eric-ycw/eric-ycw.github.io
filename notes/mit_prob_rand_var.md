@@ -8,6 +8,9 @@ tags: [math]
 - [Problem Set 1](#problem-set-1)
 - [Problem Set 2](#problem-set-2)
 
+
+These are my answers to (most of) the questions found in the MIT course Probability and Random Variables (18.600 F2019), which can be found on MIT OpenCourseWare.
+
 Link to questions [here](https://ocw.mit.edu/courses/mathematics/18-600-probability-and-random-variables-fall-2019/assignments/).
 
 **DISCLAIMER:** All 'answers' are attempts and could be incorrect.
@@ -149,8 +152,6 @@ P(E \cup F \cup G) & = P(E \cup F) + P(G) - P((E \cup F)G) \\
 
 & = P(E) + P(F) + P(G) - P(FG) - P(EG) - P(EF) + P(EFG) \\
 
-& = P(E) + P(F) + P(G) - P(E^cFG) - P(EF^cG) - P(EFG^c) - 3P(EFG) + P(EFG) \\
-
 & = P(E) + P(F) + P(G) - P(E^cFG) - P(EF^cG) - P(EFG^c) - 2P(EFG) \\
 
 \end{split}
@@ -169,6 +170,89 @@ There exists arbitrage opportunities where the prices for opposing bets on predi
 ### Question B2
 
 People betting on presidential nomination contracts are subject to many cognitive biases (overconfidence, information bias), which gives room to pricing errors and arbitrage opportunities.
+
+### Question C
+*Skipped*
+
+### Question D
+
+$$
+\begin{split}
+
+P(A) & = p^2 + 2p \cdot (1-p) \cdot P(A) \\
+
+& = \frac{p^2}{1 - 2p \cdot (1-p)} \\
+
+& = \frac{p^2}{p^2 + (1-p)^2} \\
+
+\end{split}
+$$
+
+If Alice is $k$ times as likely to win a point (i.e. $p = kq = k(1-p)$), we have:
+
+$$
+
+P(A) = \frac{k^2 \cdot (1-p)^2}{(k^2+1) \cdot (1-p)^2} = \frac{k^2}{k^2+1} \\
+
+P(B) = 1 - \frac{k^2}{k^2+1} = \frac{1}{k^2+1} \\
+
+P(A) = k^2 \cdot P(B)
+
+$$
+
+### Question E
+
+This is a variant of the birthday problem.
+
+$$
+P(E_m) = 1 - \prod_{k=1}^{m-1}\frac{2200-k}{2200} \\
+
+P(E_{36}) \approx 0.7498 \\
+
+P(E_{56}) \approx 0.4936 \\
+
+P(E_{78}) \approx 0.2512 \\
+$$
+
+### Question F
+
+$$
+P(N=8) = \frac{\binom{7}{0}}{\binom{15}{8}} \\
+
+P(N=9) = \frac{\binom{7}{1}}{\binom{15}{9}} - P(N=8) \\
+
+P(N=10) = \frac{\binom{7}{2}}{\binom{15}{10}} - P(N=9)
+$$
+
+Hence, by the inclusion-exclusion principle:
+
+$$
+P(N) = \sum_{k=8}^{N} (-1)^{N-k} \frac{\binom{7}{k-8}}{\binom{15}{k}} \\
+
+P(15) = \frac{4352}{6435} \approx 0.6763 > \frac{1}{2}
+$$
+
+### Question G
+
+Consider a slightly modified version of the game where upon stopping, the last card in the deck is revealed rather than the card on top. It should be immediately obvious that the probability of winning in this case is always $\frac{1}{2}$, regardless of when the game is stopped. Since each permutation of the deck of cards is equally likely, the probability of the first card in the remaining deck being red is equal to that of the last card. Hence, no matter what strategy the player uses, the expected probability of winning the game will always be $\frac{1}{2}$.
+
+We can also mathematically prove that betting at any point during the game is considered an optimal strategy.
+
+Let $E(n, k)$ be the expected value of winning the game, where $n$ is the number of cards remaining in the deck, and $k$ is the number of red cards remaining in the deck. If we bet now, $E(n, k)_{bet} = \frac{k}{n}$. If we wait for one more card, there are two possible outcomes. The probability of the next card being black is $\frac{n-k}{n}$, and in this case $n$ will decrease by one. The probability of the next card being red is $\frac{k}{n}$, and in this case both $n$ and $k$ will decrease by one. The expected value of waiting will be:
+
+$$
+\begin{split}
+
+E(n, k)_{wait} & = \frac{n-k}{n} E(n-1, k)_{bet} + \frac{k}{n} E(n-1, k-1)_{bet} \\
+
+& = (\frac{n-k}{n}) (\frac{k}{n-1}) + (\frac{k}{n}) (\frac{k-1}{n-1}) \\
+
+& = \frac{k}{n} = E(n, k)_{bet}
+
+\end{split}
+$$
+
+Therefore, it makes no difference whether one bets now or waits (i.e. the process is a martingale).
 
 ### Additional Notes
 
