@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Machine Learning From Scratch Part 1: Multiple Linear Regression"
+title: "Machine Learning From Scratch: Multiple Linear Regression"
 tags: [math, statistics, machine-learning]
 ---
 **Table of Contents**
