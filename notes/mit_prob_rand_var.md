@@ -7,6 +7,7 @@ tags: [math]
 **Table of Contents**
 - [Problem Set 1](#problem-set-1)
 - [Problem Set 2](#problem-set-2)
+- [Problem Set 3](#problem-set-3)
 
 
 These are my answers to (most of) the questions found in the MIT course Probability and Random Variables (18.600 F2019), which can be found on MIT OpenCourseWare.
@@ -277,4 +278,23 @@ P(W) & = P(W_1 \cup W_2 \cup \cdots \cup W_n) = P(\bigcup_{i=1}^{n} W_i) \\
 & \approx 1 - e^{-1}
 
 \end{split}
+$$
+
+Also, De Morgan's laws:
+
+$$
+(A \cup B)^c = A^c \cap B^c \\
+
+(A \cap B)^c = A^c \cup B^c
+$$
+
+In other words:
+- not ($A$ or $B$) = not $A$ and not $B$
+- not ($A$ and $B$) = not $A$ or not $B$
+
+## Problem Set 3
+### Question A
+
+$$
+P(W) = \frac{1}{6} \sum_{i=1}^{5}
 $$
